@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>화면 시안</title>
+<style>
+:root{--ink:#0b0b0b;--ink2:#52514e;--muted:#8a8984;--line:#e6e5e0;--surf:#fcfcfb;--blue:#2a78d6;--blue-l:#eaf2fc;--navy:#184f95;--gray:#f0efec}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;font-family:"Malgun Gothic",sans-serif;color:var(--ink);font-size:13px}
+.frame{width:1073px;margin:0;padding:18px 22px;background:var(--surf);zoom:1.1}
+.cap{font-weight:700;font-size:17px;margin:0 0 12px}
+.bar{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.bar .lab{color:var(--ink2);font-size:12px}
+.sel{border:1px solid #cfcec8;border-radius:6px;padding:7px 10px;background:#fff;font-size:13px}
+.btn{background:var(--blue);color:#fff;border-radius:6px;padding:8px 16px;font-weight:700}
+.tabs{display:flex;gap:6px;margin:14px 0 8px}
+.tab{padding:6px 12px;border-radius:16px;border:1px solid var(--line);color:var(--ink2);background:#fff;font-size:12px}
+.tab.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.wrap{display:grid;grid-template-columns:1fr 330px;gap:14px}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+th{background:var(--gray);color:var(--ink2);font-weight:600;font-size:12px;text-align:left;padding:9px 10px}
+td{border-top:1px solid var(--line);padding:9px 10px;vertical-align:middle}
+.id{font-family:Consolas,monospace;font-size:12px;color:var(--ink2);white-space:nowrap}
+td.st{white-space:nowrap}
+.low{background:#fff;color:var(--muted);border:1.5px dashed #d6d5cf}
+.sp{font-style:italic}
+.b{display:inline-block;border-radius:5px;padding:2px 8px;font-size:12px;font-weight:700;white-space:nowrap}
+.real{background:var(--navy);color:#fff}
+.pred{background:var(--blue-l);color:var(--blue);border:1.5px dashed var(--blue)}
+.mid{background:#fff;color:var(--ink2);border:1.5px dashed #b9b8b1}
+.why{font-size:11.5px;color:var(--ink2)}
+td:nth-child(4){min-width:190px}
+.bar .lab{white-space:nowrap}
+.cart{border:1px solid var(--blue);color:var(--blue);border-radius:5px;padding:3px 8px;font-size:12px;white-space:nowrap}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:12px}
+.card h4{margin:0 0 8px;font-size:13.5px}
+.path{font-size:12px;line-height:1.9}
+.path span{background:var(--gray);border-radius:4px;padding:2px 6px}
+.path b{background:var(--blue-l);color:var(--blue);border-radius:4px;padding:2px 6px}
+.kv{display:flex;justify-content:space-between;border-top:1px dashed var(--line);padding:6px 0;font-size:12.5px}
+.kv:first-of-type{border-top:0}
+.big{font-size:22px;font-weight:800;color:var(--blue)}
+.note{font-size:11.5px;color:var(--muted);line-height:1.6}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:11.5px;color:var(--ink2);margin:8px 0 0}
+.legend>span{white-space:nowrap}
+.tag{font-size:11px;color:var(--muted)}
+</style></head>
+<body><div class="frame">
+<p class="cap">그림 5. 효능 내비게이터 화면 시안 (자원 검색 결과와 목적별 추천)</p>
+
+<div class="bar">
+  <span class="lab">목적 효능</span><span class="sel">그람양성균 항균 (황색포도상구균) ▾</span>
+  <span class="lab">자원 유형</span><span class="sel">해양미생물 ▾</span>
+  <span class="lab">분양 수량</span><span class="sel">20점 (회당 한도) ▾</span>
+  <span class="lab">계통 중복</span><span class="sel">같은 종 1점까지 ▾</span>
+  <span style="flex:1"></span><span class="btn">추천 받기</span>
+</div>
+
+<div class="tabs"><span class="tab on">추천 후보 20 (상위 일부 표시)</span><span class="tab">전체 검색 결과</span><span class="tab">실측 등급만 보기</span></div>
+
+<div class="wrap">
+<div>
+<table>
+<tr><th>자원번호</th><th>학명</th><th>항균 효능</th><th>근거</th><th>재고</th><th></th></tr>
+<tr><td class="id">MABIK NP40220101</td><td class="sp">Streptomyces hawaiiensis</td><td><span class="b real">실측 A</span></td><td class="why">뱅크 시험 결과 (시험균 6종 중 5종 A)</td><td class="st">분양가능</td><td><span class="cart">담기</span></td></tr>
+<tr><td class="id">MABIK MI00009402</td><td class="sp">Streptomyces venezuelae</td><td><span class="b pred">예측 높음</span></td><td class="why">같은 속 37종 · A 19% (평균의 22배)</td><td>9 Vial</td><td><span class="cart">담기</span></td></tr>
+<tr><td class="id">MABIK MI00009007</td><td class="sp">Streptomyces rhizosphaerihabitans</td><td><span class="b pred">예측 높음</span></td><td class="why">같은 속 37종 · A 19%</td><td>10 Vial</td><td><span class="cart">담기</span></td></tr>
+<tr><td class="id">MABIK MI00006052</td><td class="sp">Streptomyces atroolivaceus</td><td><span class="b pred">예측 높음</span></td><td class="why">같은 속 37종 · A 19%</td><td>5 Vial</td><td><span class="cart">담기</span></td></tr>
+<tr><td class="id">MABIK FU00001490</td><td class="sp">Cladosporium pruni-salicinae</td><td><span class="b mid">예측 보통</span></td><td class="why">같은 속 7종 · A 7% (평균의 8배)</td><td class="st">분양가능</td><td><span class="cart">담기</span></td></tr>
+<tr><td class="id">MABIK MI00009152</td><td class="sp">Pseudomonas kurunegalensis</td><td><span class="b low">예측 낮음</span></td><td class="why">같은 속 23종 · A 0%</td><td class="st">분양가능</td><td><span class="cart">담기</span></td></tr>
+<tr><td class="id">MABIK MI00009836</td><td class="sp">Agarivorans sediminis</td><td><span class="tag">표시 안 함</span></td><td class="why">같은 계통 시험 3종 미만</td><td class="st">분양가능</td><td><span class="cart">담기</span></td></tr>
+</table>
+<div class="legend"><span><span class="b real">실측 A</span> 뱅크 효능 시험 결과</span><span><span class="b pred">예측 높음</span> 같은 계통 시험 결과로 추정한 참고 정보</span><span><span class="b low">예측 낮음</span> 같은 계통 A 비율 낮음</span><span><span class="tag">표시 안 함</span> 근거 계통 시험 3종 미만</span></div>
+</div>
+
+<div>
+<div class="card"><h4>추천 근거: Streptomyces venezuelae</h4>
+<div class="path"><span>세균</span> › <span>Actinomycetota</span> › <span>Actinomycetes</span> › <span>Kitasatosporales</span> › <span>Streptomycetaceae</span> › <b>Streptomyces 속</b></div>
+<div style="margin-top:8px">
+<div class="kv"><span>같은 속 시험 종 / 추출물</span><b>37종 / 62건</b></div>
+<div class="kv"><span>황색포도상구균 A 비율</span><b>19% (미생물 평균 0.9%)</b></div>
+<div class="kv"><span>이 시험의 예측 정확도</span><b>AUC 0.91</b></div>
+</div></div>
+<div class="card"><h4>이번 추천 20점의 기대 성과</h4>
+<div class="kv"><span>임의 선택 시 기대 A등급</span><b>0.2건</b></div>
+<div class="kv"><span>추천 목록 기대 A등급</span><span class="big">약 3건</span></div>
+<div class="note">추천 목록 기대치는 같은 계통 A 비율을 합산한 값임</div></div>
+<div class="note">예측 정보는 분양 자원 선택을 돕는 참고 정보이며 실측 등급과 구분하여 표시함. 분양 승인 기준에는 영향을 주지 않음. 예측 성능은 매월 갱신하여 공개함.</div>
+</div>
+</div>
+</div></body></html>
